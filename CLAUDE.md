@@ -6,7 +6,7 @@ Este repositório é o centro do laboratório **open-eda-labs**: workflows agên
 
 `docs/PLANO_MESTRE.md` (export da versão 1.8, de 14/11/2026) é o handoff completo: decisões D-01 a D-44, etapas P0 a P6 e E0 a E5, riscos, perguntas e próximos passos. O original vivo é o doc "Plano Mestre: Automação Agêntica por Alertas" no claude.ai. Em conflito, vale o doc vivo. Leia o plano e o `PROGRESS.md` antes de propor qualquer coisa; atualize o `PROGRESS.md` ao fim de cada tarefa. Não invente decisões: se faltar uma, pergunte.
 
-Decisão nova, tomada depois do plano, vira um ADR em `docs/adr/` (convenção em `docs/adr/README.md`). Este repositório vai guardar o grafo do Graphify self-hosted, com toda a organização indexada, como memória entre máquinas; a página do projeto no GitHub Pages fica para depois (ADR-0003).
+Decisão nova, tomada depois do plano, vira um ADR em `docs/adr/` (convenção em `docs/adr/README.md`). `graphify-out/graph.json` é o grafo do Graphify self-hosted com toda a organização indexada, a memória entre máquinas: consulte com `graphify query "<pergunta>" --seed <nó> --graph graphify-out/graph.json` antes de reler os documentos inteiros, e regenere pela skill `/graphify` quando documentos ou código mudarem. A página do projeto no GitHub Pages fica para depois (ADR-0003).
 
 ## Regras que não se negociam
 

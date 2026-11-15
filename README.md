@@ -8,6 +8,7 @@ Repositório central do laboratório open-eda-labs: workflows agênticos dispara
 | Decisões de arquitetura tomadas depois do plano (ADRs) | [`docs/adr/`](docs/adr/README.md) |
 | Progresso e próximo passo | [`PROGRESS.md`](PROGRESS.md) |
 | Instruções para sessões de agente | [`CLAUDE.md`](CLAUDE.md) |
+| Grafo de conhecimento da organização (Graphify self-hosted) | [`graphify-out/`](graphify-out/GRAPH_REPORT.md) |
 
 A página do projeto no GitHub Pages fica para depois (ADR-0003).
 
