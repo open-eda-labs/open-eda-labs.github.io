@@ -39,5 +39,5 @@ A maioria é texto anterior à v1.5 (D-37) que não foi atualizado.
 - **Formato dos arquivos do contrato.** D-10, D-11, P1, P3 e a tabela de repositórios citam `schemas/alert-event.json` e `schemas/recommendation.schema.json`. Desde 15/11/2026 o `triage-contract` guarda os mesmos JSON Schema em YAML (`schemas/alert-event.yaml`, `schemas/recommendation.yaml`). O arquivo que os passos emitem em runtime continua `recommendation.json`.
 - **gRPC entre serviços próprios.** O plano descreve a submissão ao Argo pelo endpoint HTTP `/api/v1/events/{namespace}/{discriminator}`. A preferência nova é a API gRPC do Argo Server; falta confirmar em P3 que o serviço de eventos por gRPC se comporta igual na versão pinada.
 - **Quem cria o GitHub App** do passo de publicação (D-31) e onde fica a chave: sessões cloud não criam apps nem segredos.
-- **Licença dos repositórios.** O `bootstrap-repos.sh` previa Apache-2.0, mas os repositórios foram criados vazios, sem licença.
+- **Licença dos repositórios.** O script de bootstrap do handoff previa Apache-2.0, mas os repositórios foram criados vazios, sem licença.
 - **Visibilidade dos repositórios** (privados ou públicos): muda o custo de minutos do Actions e o secret scanning.

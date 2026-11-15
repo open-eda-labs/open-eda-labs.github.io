@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-BR" data-astryx-theme="neutral">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>open-eda-labs</title>
+    <meta
+      name="description"
+      content="Laboratório de workflows agênticos disparados por eventos, com Argo Workflows e padrões abertos." />
+    <!-- Astryx sem build (receita "No build step (CDN)" do @astryxdesign/core). Versões pinadas (D-40). -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@astryxdesign/core@0.7.16/src/reset.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@astryxdesign/core@0.7.16/dist/astryx.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@astryxdesign/theme-neutral@0.7.16/dist/theme.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@19.2.0",
+          "react/jsx-runtime": "https://esm.sh/react@19.2.0/jsx-runtime",
+          "react-dom": "https://esm.sh/react-dom@19.2.0",
+          "react-dom/client": "https://esm.sh/react-dom@19.2.0/client",
+          "@astryxdesign/core": "https://esm.sh/@astryxdesign/core@0.7.16?external=react,react-dom"
+        }
+      }
+    </script>
+    <style>
+      /* Fonte do sistema (San Francisco em aparelhos Apple): a webfont do tema não é carregada de propósito. */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.47;
+        margin: 0;
+      }
+      main {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 64px 22px 96px;
+      }
+      /* Alvo de toque mínimo de 44 px. */
+      main a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main id="root">
+      <!-- Conteúdo sem JavaScript; o React substitui por componentes Astryx. -->
+      <h1>open-eda-labs</h1>
+      <p>Laboratório de workflows agênticos disparados por eventos, com Argo Workflows e padrões abertos.</p>
+      <ul>
+        <li><a href="https://github.com/open-eda-labs/open-eda-labs.github.io/blob/main/docs/PLANO_MESTRE.md">Plano Mestre</a></li>
+        <li><a href="https://github.com/open-eda-labs/open-eda-labs.github.io/tree/main/docs/adr">Decisões de arquitetura (ADRs)</a></li>
+        <li><a href="https://github.com/open-eda-labs">Repositórios</a></li>
+      </ul>
+    </main>
+    <script type="module">
+      import * as React from 'react';
+      import {createRoot} from 'react-dom/client';
+      import {Badge, Card, Grid, Heading, Link, Stack, Text} from '@astryxdesign/core';
+
+      const e = React.createElement;
+      const org = 'https://github.com/open-eda-labs/';
+      const core = org + 'open-eda-labs.github.io/';
+
+      const docs = [
+        ['Plano Mestre', 'Decisões, etapas, riscos e perguntas em aberto.', core + 'blob/main/docs/PLANO_MESTRE.md'],
+        ['ADRs', 'Decisões de arquitetura tomadas depois do plano.', core + 'tree/main/docs/adr'],
+        ['Progresso', 'O que foi feito e o próximo passo.', core + 'blob/main/PROGRESS.md'],
+      ];
+
+      const repos = [
+        ['triage-contract', 'Contrato versionado: schemas de evento e de recomendação, AGENTS.md e skills.'],
+        ['intake-adapter', 'Fronteira de confiança: autenticação, normalização, dedup e limites.'],
+        ['agent-workflows', 'Workflows de triagem e do vuln fixer Maven no Argo.'],
+        ['triage-eval', 'Replay, gabarito e suítes de avaliação.'],
+        ['demo-service', 'App Maven com CVEs reais conhecidas; alvo do vuln fixer e da injeção de falhas.'],
+        ['agent-step-images', 'Imagens OCI do passo de agente.'],
+        ['lab-infra', 'Laboratório como código: k3s, Argo, InfluxDB, Grafana e MLflow.'],
+        ['.github', 'Perfil da organização e convenções compartilhadas.'],
+      ];
+
+      const rules = [
+        'Só dados sintéticos ou públicos.',
+        'Leitura primeiro: o agente só escreve como branch e PR draft, e nunca faz merge.',
+        'Medir antes de escalar: cada etapa tem um gate numérico fixado antes de começar.',
+        'Convenção antes de configuração; YAML e gRPC entre serviços próprios.',
+      ];
+
+      const card = ([title, text, href]) =>
+        e(
+          Card,
+          {key: title, padding: 5},
+          e(
+            Stack,
+            {gap: 2, align: 'start'},
+            e(Link, {href, isStandalone: true, weight: 'semibold'}, title),
+            e(Text, {color: 'secondary'}, text),
+          ),
+        );
+
+      const section = (title, children) =>
+        e(Stack, {gap: 4}, e(Heading, {level: 2}, title), children);
+
+      createRoot(document.getElementById('root')).render(
+        e(
+          Stack,
+          {gap: 10},
+          e(
+            Stack,
+            {gap: 4, align: 'start'},
+            e(Badge, {label: 'Fase 1: prova de conceito'}),
+            e(Heading, {level: 1}, 'open-eda-labs'),
+            e(
+              Text,
+              {size: 'lg', color: 'secondary'},
+              'Laboratório de workflows agênticos disparados por eventos. Um alerta entra e uma recomendação com evidência sai; uma vulnerabilidade entra e um PR draft sai. Com Argo Workflows e padrões abertos.',
+            ),
+          ),
+          section('Documentos', e(Grid, {columns: {minWidth: 260}, gap: 4}, docs.map(card))),
+          section(
+            'Repositórios',
+            e(Grid, {columns: {minWidth: 260}, gap: 4}, repos.map(([name, text]) => card([name, text, org + name]))),
+          ),
+          section(
+            'Princípios',
+            e(Stack, {gap: 2}, rules.map(rule => e(Text, {key: rule}, rule))),
+          ),
+        ),
+      );
+    </script>
+  </body>
+</html>
