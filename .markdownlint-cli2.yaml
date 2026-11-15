@@ -1,6 +1,0 @@
-config:
-  MD013: false
-  MD033: false
-  MD041: false
-ignores:
-  - docs/PLANO_MESTRE.md

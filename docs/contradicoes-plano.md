@@ -36,6 +36,8 @@ A maioria é texto anterior à v1.5 (D-37) que não foi atualizado.
 - **Em que repositório ficam os entregáveis de P0 e P1** (`replay/run_replay.py`, `prompts/triage.v1.md`, `eval/blind-review.csv`, `docs/replay-report.md`, `docs/kill-criteria.md`, `docs/allowed-fields.md`, `runbooks/`). A tabela de repositórios sugere `triage-eval`, mas o prompt versionado poderia ficar em `triage-contract`.
 - **Fonte Application Insights no replay.** P0 pede alertas "de Grafana e Application Insights"; o laboratório só tem Grafana (D-35). O adapter do Azure seria testado só com payload sintético.
 - **Linguagem do `intake-adapter`** e dos passos sem modelo: não há decisão.
+- **Formato dos arquivos do contrato.** D-10, D-11, P1, P3 e a tabela de repositórios citam `schemas/alert-event.json` e `schemas/recommendation.schema.json`. Desde 15/11/2026 o `triage-contract` guarda os mesmos JSON Schema em YAML (`schemas/alert-event.yaml`, `schemas/recommendation.yaml`). O arquivo que os passos emitem em runtime continua `recommendation.json`.
+- **gRPC entre serviços próprios.** O plano descreve a submissão ao Argo pelo endpoint HTTP `/api/v1/events/{namespace}/{discriminator}`. A preferência nova é a API gRPC do Argo Server; falta confirmar em P3 que o serviço de eventos por gRPC se comporta igual na versão pinada.
 - **Quem cria o GitHub App** do passo de publicação (D-31) e onde fica a chave: sessões cloud não criam apps nem segredos.
 - **Licença dos repositórios.** O `bootstrap-repos.sh` previa Apache-2.0, mas os repositórios foram criados vazios, sem licença.
 - **Visibilidade dos repositórios** (privados ou públicos): muda o custo de minutos do Actions e o secret scanning.

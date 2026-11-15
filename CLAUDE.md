@@ -14,6 +14,7 @@ Este diretório é o ponto de partida do laboratório **open-eda-labs**: workflo
 - Classes de dado D0 a D3 (D-42): D3 nunca vai a modelo, trace ou MLflow.
 - Laboratório com poucas peças em padrão de produção: tudo como código, versões pinadas, segredos fora do Git, recriar do zero com um comando (D-40).
 - Ecossistema do vuln fixer: Maven (D-29). Detecção: OSV-Scanner em CronWorkflow (D-30).
+- Convenção antes de configuração: o padrão da org vale sem arquivo de config por repositório (o lint mora no workflow reutilizável do `.github`). YAML para configuração, schemas e fixtures. gRPC entre serviços próprios (o intake-adapter fala com a API gRPC do Argo Server); HTTP+JSON só nas bordas externas: webhooks de alerta e API do modelo (preferência do Rafa em 15/11/2026, a registrar no plano como D-45).
 
 ## Hardware
 
