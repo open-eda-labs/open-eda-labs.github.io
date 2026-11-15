@@ -31,3 +31,14 @@ Notebook Galaxy Book4 Ultra (32 GB, RTX 4070 Laptop 8 GB, Windows 11 + WSL2): k3
 5. Medir a fatia resolvida pelo N1 antes de construir o N2.
 
 Atualize o Plano Mestre (pedindo ao Rafa) sempre que uma decisão mudar.
+
+## Manutenção do grafo (ADR-0003)
+
+Ao fim de toda tarefa que criou, alterou ou removeu arquivos em qualquer repositório da org, com os repositórios clonados lado a lado e a partir da pasta que os contém:
+
+1. `GRAPHIFY_OUT=open-eda-labs.github.io/graphify-out graphify update .` para o código (sem modelo).
+2. `/graphify . --update` pela skill para os documentos.
+3. Se arquivos foram removidos, repita com `--force`: sem ele o Graphify não grava um grafo menor que o anterior.
+4. Inclua `graphify-out/graph.json`, `GRAPH_REPORT.md` e `manifest.json` no PR do `open-eda-labs.github.io`.
+
+Se o Graphify ou a skill não estiverem instalados na sessão, não improvise: registre em `PROGRESS.md` que o grafo ficou desatualizado.

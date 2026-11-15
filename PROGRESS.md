@@ -5,7 +5,7 @@ Leia este arquivo no início de toda sessão e atualize-o ao fim de cada tarefa.
 ## Próximo passo
 
 1. Rafa: fazer merge dos PRs do `open-eda-labs.github.io` e do `triage-contract` (os outros 7 já entraram).
-2. Rafa: colar o script de configuração do Graphify no ambiente cloud e confirmar numa sessão nova que a skill `/graphify` aparece; decidir quem atualiza o grafo (ADR-0003).
+2. Rafa: colar o script de configuração do Graphify no ambiente cloud e confirmar numa sessão nova que a skill `/graphify` aparece; depois, dizer dia, hora e fuso para a tarefa agendada semanal que atualiza o grafo (ADR-0003).
 3. Rafa: decidir o critério do re-scan do vuln fixer (ADR-0002) antes do P5 N1.
 4. Depois: P5 nível N1 no `agent-workflows`, que depende do cluster do `lab-infra` (P2).
 
