@@ -4,16 +4,18 @@ Leia este arquivo no início de toda sessão e atualize-o ao fim de cada tarefa.
 
 ## Próximo passo
 
-1. Rafa: revisar e fazer merge dos PRs draft desta onda: `lab-infra` #2, `demo-service` #2, `agent-workflows` #2 e o deste repositório.
-2. Rafa: rodar a base no ultrabook (`make up`, `./check-model.sh`, `./footprint.sh` no `lab-infra`) e colar a saída; é o que fecha o G-P2.
-3. Rafa: decidir o critério do re-scan (ADR-0002). Com "advisory alvo", o N1 resolve 12 de 20; com "pacote inteiro", 5 de 20.
-4. Numa sessão nova (com a skill `/graphify` instalada pelo script do ambiente): `/graphify . --update` para os documentos novos desta onda.
-5. Depois: decidir se o N2 se justifica (8 casos restantes), e a linguagem do `intake-adapter` para começar P3.
+1. Rafa: merge e release na ordem `demo-parent` #1 (tag `v1.0.0`), `demo-lib` #1 (tag `v1.0.0`), `demo-service` #2; conferir que o CI da lib e do serviço lê os pacotes do GitHub Packages (nunca testado).
+2. Rafa: merge de `agent-workflows` #2, `lab-infra` #2 e do PR deste repositório.
+3. Rafa: confirmar as escolhas abertas do fixer: transitivos acusados passam a ser declarados no parent; duas migrações caem no `demo-service` (commons-configuration2 e Jetty 12), não na lib.
+4. Rafa: rodar a base no ultrabook (`make up`, `./check-model.sh`, `./footprint.sh` no `lab-infra`); é o que fecha o G-P2 e permite o passo com modelo.
+5. Depois: o passo com modelo (N2) para os 10 pacotes que voltaram, e a segunda rodada que abre o PR do serviço quando parent e lib têm release nova (ainda não existe).
+6. Numa sessão nova com a skill `/graphify`: `/graphify . --update` para os documentos novos e `--force` para tirar do grafo os arquivos movidos do `demo-service` para a `demo-lib`.
 
 ## Registro
 
 | Data | Feito | Pendente | Decisões |
 | --- | --- | --- | --- |
+| 2026-11-15 | ADR-0005 aplicado. App dividido em `demo-parent` (versões), `demo-lib` (código compartilhado, 22 testes) e `demo-service` (servidor HTTP, 11 testes), com release por tag no GitHub Packages. Fixer reescrito no `agent-workflows`: última release por `versions-maven-plugin` no parent e laço de re-scan, build e testes na ordem parent, lib, service. Medição real sem modelo: 16 de 26 pacotes corrigidos (49 de 95 advisories); nos 16, o re-scan ficou zerado | 10 pacotes voltaram e precisam de migração de código: h2, xstream, commons-beanutils, snakeyaml e spring (na lib); commons-configuration2 e Jetty (no serviço). Publicação e leitura no GitHub Packages nunca executadas. Nenhum Workflow rodou em cluster. Grafo atualizado só para o código e sem `--force`: pode conter nós dos arquivos que saíram do `demo-service` | ADR-0005: última versão publicada; corrigido é re-scan limpo com build e testes verdes; fix no parent ou na lib |
 | 2026-11-15 | `lab-infra`: base de P2 como código (k3s, Argo v4.1.6, InfluxDB, Grafana, MLflow), validada só de forma estática. `agent-workflows`: P5 N1 (scan, fix, publish, notify, workflows do Argo) e medição real: o `osv-scanner fix` resolveu 12 das 20 dependências do `demo-service`. `demo-service`: token opcional do InfluxDB. Tarefa agendada quinzenal de atualização do grafo criada. Grafo atualizado só para o código (1.302 nós, 2.575 arestas) | Nada rodou em cluster. Grafo desatualizado para os documentos desta onda (ADR-0004, READMEs novos, `n1-measurement.md`): a skill `/graphify` não estava instalada nesta sessão. O grafo foi gerado com as branches de trabalho ainda não mescladas. GitHub App e Slack do vuln fixer só em modo de teste | ADR-0004: modelo padrão `qwen3:4b`. Commits com Raphonzius como autor e Claude como committer |
 | 2026-11-15 | 7 PRs do kickoff em `main`; `demo-service` com o app, 33 testes e a matriz real de bumps (12 verdes, 8 falhas). Neste repositório: ADRs 0001 a 0003, script de bootstrap removido; o rascunho da página do projeto foi descartado e a página fica para depois. `triage-contract`: skills reescritas em inglês e enxugadas | Primeiro grafo da organização em `graphify-out/` (854 nós, 1.968 arestas), gerado pelo procedimento da skill; extração dos documentos não conferida aresta por aresta; a instalação da skill no ambiente ainda não foi testada | ADR-0001 (convenção, YAML, gRPC), ADR-0002 (base do demo-service), ADR-0003 (repositório central, página, memória em grafo) |
 | 2026-11-15 | PR do `.github` em `main`. Lista de dependências do `demo-service` aprovada pelo Rafa, com as propostas do documento | Critério do re-scan (pergunta 2 da proposta) | JDK 21; sem Spring Boot; Jetty 9 como servidor; major bump conta como N2; pacotes da mesma família no mesmo PR; 8 casos que quebram; todos os PRs contra o mesmo commit base. Escolhas [P] do contrato aceitas |
