@@ -2,7 +2,7 @@
 
 ## Estado
 
-Aceita em 2026-11-15 (Rafa), ao aprovar `demo-service/docs/dependency-proposal.md`.
+Aceita em 2026-11-15 (Rafa), ao aprovar `demo-service/docs/dependency-proposal.md`. O critério de medição (itens sobre N2, PR por dependência e re-scan) foi substituído pelo ADR-0005; a base do app (JDK 21, sem Spring Boot, Jetty 9) continua valendo.
 
 ## Contexto
 
