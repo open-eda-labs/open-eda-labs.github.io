@@ -4,15 +4,17 @@ Leia este arquivo no início de toda sessão e atualize-o ao fim de cada tarefa.
 
 ## Próximo passo
 
-1. Rafa: fazer merge dos PRs do `open-eda-labs.github.io` e do `triage-contract` (os outros 7 já entraram).
-2. Rafa: colar o script de configuração do Graphify no ambiente cloud e confirmar numa sessão nova que a skill `/graphify` aparece; depois, dizer dia, hora e fuso para a tarefa agendada semanal que atualiza o grafo (ADR-0003).
-3. Rafa: decidir o critério do re-scan do vuln fixer (ADR-0002) antes do P5 N1.
-4. Depois: P5 nível N1 no `agent-workflows`, que depende do cluster do `lab-infra` (P2).
+1. Rafa: revisar e fazer merge dos PRs draft desta onda: `lab-infra` #2, `demo-service` #2, `agent-workflows` #2 e o deste repositório.
+2. Rafa: rodar a base no ultrabook (`make up`, `./check-model.sh`, `./footprint.sh` no `lab-infra`) e colar a saída; é o que fecha o G-P2.
+3. Rafa: decidir o critério do re-scan (ADR-0002). Com "advisory alvo", o N1 resolve 12 de 20; com "pacote inteiro", 5 de 20.
+4. Numa sessão nova (com a skill `/graphify` instalada pelo script do ambiente): `/graphify . --update` para os documentos novos desta onda.
+5. Depois: decidir se o N2 se justifica (8 casos restantes), e a linguagem do `intake-adapter` para começar P3.
 
 ## Registro
 
 | Data | Feito | Pendente | Decisões |
 | --- | --- | --- | --- |
+| 2026-11-15 | `lab-infra`: base de P2 como código (k3s, Argo v4.1.6, InfluxDB, Grafana, MLflow), validada só de forma estática. `agent-workflows`: P5 N1 (scan, fix, publish, notify, workflows do Argo) e medição real: o `osv-scanner fix` resolveu 12 das 20 dependências do `demo-service`. `demo-service`: token opcional do InfluxDB. Tarefa agendada quinzenal de atualização do grafo criada. Grafo atualizado só para o código (1.302 nós, 2.575 arestas) | Nada rodou em cluster. Grafo desatualizado para os documentos desta onda (ADR-0004, READMEs novos, `n1-measurement.md`): a skill `/graphify` não estava instalada nesta sessão. O grafo foi gerado com as branches de trabalho ainda não mescladas. GitHub App e Slack do vuln fixer só em modo de teste | ADR-0004: modelo padrão `qwen3:4b`. Commits com Raphonzius como autor e Claude como committer |
 | 2026-11-15 | 7 PRs do kickoff em `main`; `demo-service` com o app, 33 testes e a matriz real de bumps (12 verdes, 8 falhas). Neste repositório: ADRs 0001 a 0003, script de bootstrap removido; o rascunho da página do projeto foi descartado e a página fica para depois. `triage-contract`: skills reescritas em inglês e enxugadas | Primeiro grafo da organização em `graphify-out/` (854 nós, 1.968 arestas), gerado pelo procedimento da skill; extração dos documentos não conferida aresta por aresta; a instalação da skill no ambiente ainda não foi testada | ADR-0001 (convenção, YAML, gRPC), ADR-0002 (base do demo-service), ADR-0003 (repositório central, página, memória em grafo) |
 | 2026-11-15 | PR do `.github` em `main`. Lista de dependências do `demo-service` aprovada pelo Rafa, com as propostas do documento | Critério do re-scan (pergunta 2 da proposta) | JDK 21; sem Spring Boot; Jetty 9 como servidor; major bump conta como N2; pacotes da mesma família no mesmo PR; 8 casos que quebram; todos os PRs contra o mesmo commit base. Escolhas [P] do contrato aceitas |
 | 2026-11-15 | Revisão de enxugamento dos 9 PRs: lint por convenção no workflow reutilizável do `.github` (sem config por repositório), markdownlint removido, `.gitignore` especulativo e arquivos não pedidos apagados, schemas e exemplos do `triage-contract` convertidos para YAML (2 arquivos de exemplo no lugar de 55) | Merge do PR do `.github` primeiro: o CI dos outros 8 chama o `lint.yml` dele na `main` e fica vermelho até lá; se o `.github` for privado, liberar o acesso a Actions na org. Rafa: registrar D-45 no doc vivo | Convenção antes de configuração; YAML para config, schemas e fixtures; gRPC só entre serviços próprios, HTTP+JSON nas bordas (a virar D-45) |
