@@ -18,4 +18,4 @@ O `gemma4:e4b` fica como alternativa a medir, não como padrão: P4 pede licenç
 
 - Sobra VRAM para contexto maior (o plano estima que um modelo de 4B cabe no notebook com até 32k), mas `OLLAMA_CONTEXT_LENGTH` continua precisando ser definido (R-16).
 - Um modelo de 4B deve bastar para a triagem com saída estruturada; para tool-calling e para o loop do N2, o plano já previa modelo maior ou endpoint remoto (R-14, Q-11). Nada disso foi medido.
-- A escolha vale até P4 medir os candidatos; se a medição apontar outro, este ADR é substituído.
+- **Critério de troca.** A escolha vale até P4 medir os candidatos com os limiares do G-P4 do plano (90% de schema válido, 80% de ferramenta correta, p95 abaixo de 30 s, nenhum offload para CPU). O `gemma4:e4b` só entra na medição depois de conferida a licença; se não for compatível com o requisito de P4, sai da lista. Para o vuln fixer, o critério é outro e objetivo: as 7 unidades que a medição do fixer deixou para o passo com modelo, cada uma com build, testes e re-scan como juiz.

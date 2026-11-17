@@ -15,6 +15,9 @@ A primeira medição do vuln fixer usou `osv-scanner fix` com a menor versão qu
 - **Regra de ouro.** O fix nunca nasce no serviço. Nasce no POM pai (`demo-parent`) ou na biblioteca compartilhada (`demo-lib`); uma versão nova deles é publicada; o serviço só sobe a versão que consome. Nenhuma versão de dependência de terceiro fica declarada no serviço.
 - **Onde moram e onde publicam.** `open-eda-labs/demo-parent` e `open-eda-labs/demo-lib`, publicados no GitHub Packages da org por workflow de CI disparado por tag. O agente continua sem fazer merge nem tag (D-02, D-31).
 - **Ecossistema.** Só Maven por enquanto (D-29).
+- **Mudança de major (2026-11-17).** A última versão vale mesmo quando muda de major: se o laço fecha limpo e verde, sobe sem passo com modelo. Isso revoga "bump de major conta como N2" do ADR-0002. Na medição, protobuf 3 para 4, okio 2 para 3 e kotlin-stdlib 1.4 para 2.4 fecharam assim.
+- **Transitivos (2026-11-17).** Dependência transitiva acusada pelo scan passa a ser declarada no `dependencyManagement` do `demo-parent`, na última versão. É a única forma de o fix nascer no parent.
+- **Exceção da regra de ouro (2026-11-17).** Versões sempre no parent e código compartilhado sempre na lib. A única exceção é o código do próprio servidor HTTP do serviço (hoje, Jetty e servlets): quando uma subida de versão o quebra, a migração entra no PR de bump do serviço. Um validador mecânico no passo de publicação impede o serviço de declarar versão de terceiro.
 
 ## Consequências
 

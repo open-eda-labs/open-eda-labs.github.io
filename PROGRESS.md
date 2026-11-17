@@ -4,17 +4,38 @@ Leia este arquivo no início de toda sessão e atualize-o ao fim de cada tarefa.
 
 ## Próximo passo
 
-1. Rafa: merge e release na ordem `demo-parent` #1 (tag `v1.0.0`), `demo-lib` #1 (tag `v1.0.0`), `demo-service` #2; conferir que o CI da lib e do serviço lê os pacotes do GitHub Packages (nunca testado).
-2. Rafa: merge de `agent-workflows` #2, `lab-infra` #2 e do PR deste repositório.
-3. Rafa: confirmar as escolhas abertas do fixer: transitivos acusados passam a ser declarados no parent; duas migrações caem no `demo-service` (commons-configuration2 e Jetty 12), não na lib.
-4. Rafa: rodar a base no ultrabook (`make up`, `./check-model.sh`, `./footprint.sh` no `lab-infra`); é o que fecha o G-P2 e permite o passo com modelo.
-5. Depois: o passo com modelo (N2) para os 10 pacotes que voltaram, e a segunda rodada que abre o PR do serviço quando parent e lib têm release nova (ainda não existe).
-6. Numa sessão nova com a skill `/graphify`: `/graphify . --update` para os documentos novos e `--force` para tirar do grafo os arquivos movidos do `demo-service` para a `demo-lib`.
+### Ordem de merge e release (checklist único)
+
+1. [ ] `demo-parent` #1 → merge.
+2. [ ] `demo-parent`: criar a tag `v1.0.0` e conferir o workflow `release`.
+3. [ ] `demo-parent`: liberar leitura do pacote para `demo-lib` e `demo-service` (ou tornar o pacote público). Nunca verificado.
+4. [ ] `demo-lib` #1 → merge (o CI instala o parent a partir da `main`, então só fica verde depois do passo 1).
+5. [ ] `demo-lib`: tag `v1.0.0`, conferir o `release`, liberar leitura do pacote.
+6. [ ] `demo-service`: PR da divisão em parent e lib → merge (CI verde depois dos passos 1 e 4).
+7. [ ] `agent-workflows` #2 → merge. Os workflows clonam a `main` dos três repositórios acima, então só rodam depois do passo 6.
+8. [ ] Independentes, em qualquer ordem: `lab-infra` #2, o PR do token do InfluxDB no `demo-service`, e o PR deste repositório.
+
+### Depois dos merges
+
+1. Rafa: rodar a base no ultrabook (`make up`, `./check-model.sh`, `./footprint.sh` no `lab-infra`). Fecha o G-P2 e é pré-requisito do fixer em cluster e do passo com modelo.
+2. Rafa: criar a GitHub App do vuln fixer (permissões `contents` e `pull_requests` só nos três repositórios do demo). Sem ela, o token do publish continua estático num Secret e D-31 não vale.
+3. Próxima rodada de código: o passo com modelo (N2) como template Argo separado com a imagem do harness (`/in`, `/out`, `OPENAI_BASE_URL`, `MODEL`, `TRACEPARENT`), e as 7 unidades da medição como eval, com classe de tamanho para rotear modelo local ou remoto.
+4. Numa sessão nova com a skill `/graphify`: `/graphify . --update` para os documentos novos.
+
+### Pendências da revisão externa que ficaram de fora
+
+- Fixer disparado por evento (`WorkflowEventBinding`), além do cron: depende do intake (P3).
+- `dataref` do evento aponta para um bucket que ninguém grava; não há artifact repository no laboratório.
+- Topologia do fixer fixa no app de demonstração; tirar da convenção do `pom.xml` quando houver um segundo app.
+- Fan-out das provas isoladas no Argo e cache de `~/.m2`: o fix levou cerca de 37 min numa reprodução independente.
+- Job de CI com k3d e Argo rodando os workflows em `DRY_RUN`.
+- Saída dos pods restrita por domínio (Maven Central e OSV): exige proxy de saída ou outro CNI.
 
 ## Registro
 
 | Data | Feito | Pendente | Decisões |
 | --- | --- | --- | --- |
+| 2026-11-17 | Revisão de um agente externo, que reproduziu a medição do fixer (16 de 26) num cluster k3d e achou três bloqueios para o workflow subir no Argo. Correções aplicadas nos PRs abertos: RBAC do executor, passagem de arquivos por volume, commit fixado do scan ao publish, robustez do laço, `DRY_RUN` completo, validador de patch, imagem por digest; pacote da lib renomeado para `labs.demo.lib`, CI do demo sem depender do GitHub Packages; `lab-infra` com downloads conferidos por hash e `NetworkPolicy` | As correções de cluster não foram exercitadas aqui (não há cluster nesta sessão). Ver "Pendências da revisão externa" acima | ADR-0005: major sobe automático quando o laço fecha; transitivos acusados vão para o parent; exceção da regra de ouro para o servidor HTTP. ADR-0001: `lint.yml@main` como exceção a D-40. ADR-0004: critério de troca de modelo |
 | 2026-11-15 | ADR-0005 aplicado. App dividido em `demo-parent` (versões), `demo-lib` (código compartilhado, 22 testes) e `demo-service` (servidor HTTP, 11 testes), com release por tag no GitHub Packages. Fixer reescrito no `agent-workflows`: última release por `versions-maven-plugin` no parent e laço de re-scan, build e testes na ordem parent, lib, service. Medição real sem modelo: 16 de 26 pacotes corrigidos (49 de 95 advisories); nos 16, o re-scan ficou zerado | 10 pacotes voltaram e precisam de migração de código: h2, xstream, commons-beanutils, snakeyaml e spring (na lib); commons-configuration2 e Jetty (no serviço). Publicação e leitura no GitHub Packages nunca executadas. Nenhum Workflow rodou em cluster. Grafo atualizado só para o código e sem `--force`: pode conter nós dos arquivos que saíram do `demo-service` | ADR-0005: última versão publicada; corrigido é re-scan limpo com build e testes verdes; fix no parent ou na lib |
 | 2026-11-15 | `lab-infra`: base de P2 como código (k3s, Argo v4.1.6, InfluxDB, Grafana, MLflow), validada só de forma estática. `agent-workflows`: P5 N1 (scan, fix, publish, notify, workflows do Argo) e medição real: o `osv-scanner fix` resolveu 12 das 20 dependências do `demo-service`. `demo-service`: token opcional do InfluxDB. Tarefa agendada quinzenal de atualização do grafo criada. Grafo atualizado só para o código (1.302 nós, 2.575 arestas) | Nada rodou em cluster. Grafo desatualizado para os documentos desta onda (ADR-0004, READMEs novos, `n1-measurement.md`): a skill `/graphify` não estava instalada nesta sessão. O grafo foi gerado com as branches de trabalho ainda não mescladas. GitHub App e Slack do vuln fixer só em modo de teste | ADR-0004: modelo padrão `qwen3:4b`. Commits com Raphonzius como autor e Claude como committer |
 | 2026-11-15 | 7 PRs do kickoff em `main`; `demo-service` com o app, 33 testes e a matriz real de bumps (12 verdes, 8 falhas). Neste repositório: ADRs 0001 a 0003, script de bootstrap removido; o rascunho da página do projeto foi descartado e a página fica para depois. `triage-contract`: skills reescritas em inglês e enxugadas | Primeiro grafo da organização em `graphify-out/` (854 nós, 1.968 arestas), gerado pelo procedimento da skill; extração dos documentos não conferida aresta por aresta; a instalação da skill no ambiente ainda não foi testada | ADR-0001 (convenção, YAML, gRPC), ADR-0002 (base do demo-service), ADR-0003 (repositório central, página, memória em grafo) |
