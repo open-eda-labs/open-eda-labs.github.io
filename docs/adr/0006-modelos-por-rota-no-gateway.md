@@ -6,7 +6,7 @@ Proposta em 2026-11-18 (Rafa). Revê o ADR-0004 (modelo padrão), o D-07 (AI Gat
 
 ## Contexto
 
-Rodar modelo local no notebook (8 GB de VRAM) é pesado, e o `qwen3:4b` (ADR-0004) provavelmente não sustenta as migrações do N2: Jetty 9 para 12, Spring 5 para 7 e os outros 8 pacotes que voltaram na medição do fixer (ADR-0005). Há modelos hospedados de custo zero ou quase zero: no free tier do NVIDIA NIM, o `google/gemma-4-31b-it` e o `deepseek-ai/deepseek-v4.1-flash` (o `moonshotai/kimi-k3.1-pro` está em ajuste e fora do catálogo gratuito em 18/11/2026); e o `Microsoft-Decision-1.1` (GA em 17/11/2026), um modelo de decisão que devolve escolha e probabilidade calibrada, e não texto. O Switchyard, roteador de modelo da NVIDIA (NeMo) adiado no plano por ser pre-1.0, é a alternativa hospedada no próprio laboratório para a mesma função de roteamento.
+Rodar modelo local no notebook (8 GB de VRAM) é pesado, e o `qwen3:4b` (ADR-0004) provavelmente não sustenta as migrações do N2: Jetty 9 para 12, Spring 5 para 7 e os outros 8 pacotes que voltaram na medição do fixer (ADR-0005). Há modelos hospedados de custo zero ou quase zero: no free tier do NVIDIA NIM, o `google/gemma-4-31b-it` (respondeu em 18/11/2026; o `moonshotai/kimi-k3.1-pro` está em ajuste e o `deepseek-ai/deepseek-v4.1-flash` saiu de linha em 16/11/2026, HTTP 410); e o `Microsoft-Decision-1.1` (GA em 17/11/2026), um modelo de decisão que devolve escolha e probabilidade calibrada, e não texto. O Switchyard, roteador de modelo da NVIDIA (NeMo) adiado no plano por ser pre-1.0, é a alternativa hospedada no próprio laboratório para a mesma função de roteamento.
 
 ## Decisão
 
@@ -15,7 +15,7 @@ Rodar modelo local no notebook (8 GB de VRAM) é pesado, e o `qwen3:4b` (ADR-000
 
 | Rota | Backend | Uso |
 | --- | --- | --- |
-| `fix-n2` | NVIDIA NIM (free tier): `deepseek-ai/deepseek-v4.1-flash` ou `google/gemma-4-31b-it`, escolhido nas unidades do N2 | Migração de código no passo N2 do vuln fixer |
+| `fix-n2` | `google/gemma-4-31b-it` no NVIDIA NIM (free tier) | Migração de código no passo N2 do vuln fixer |
 | `simple` | vLLM com modelo pequeno de licença Apache-2.0 (ex.: família Qwen) | Tarefas simples: triagem estruturada, resumo, extração |
 | `internal` | Só vLLM | Qualquer dado de classe D1 ou D2 |
 | `classify` | A definir em P4, entre `Microsoft-Decision-1.1` pela OpenRouter e Switchyard (NVIDIA NeMo) hospedado no laboratório | Smart routing: escolher entre `simple` e `fix-n2` por dificuldade ou tipo de tarefa |
@@ -27,7 +27,8 @@ Rodar modelo local no notebook (8 GB de VRAM) é pesado, e o `qwen3:4b` (ADR-000
   - Métricas: acerto, latência, custo por decisão, e quantas rotas erradas derrubam o eval da tarefa.
   - Calibração (Brier) só para o braço que devolve probabilidade: o Decision-1.1, e o Switchyard se expuser score.
   - O vencedor fica com a rota. Em empate, fica o Switchyard, que não depende de endpoint externo nem manda prompt para fora.
-- **Escolha da rota `fix-n2`.** Os dois candidatos do NIM rodam as mesmas unidades do N2; fica o que fechar mais unidades com build, testes e re-scan verdes, e, em empate, o de menor latência. O Kimi volta a ser candidato se reaparecer no free tier.
+- **Rota `fix-n2`.** Único candidato hoje: Gemma 4 31B. Outro modelo do NIM (o Kimi, se voltar) entra rodando as mesmas unidades do N2; fica o que fechar mais unidades com build, testes e re-scan verdes, e, em empate, o de menor latência. O NIM não suporta saída estruturada para esse modelo: o harness não depende de `response_format`.
+- **Fine-tuning do Gemma 4 (braço de P4).** O NeMo Automodel tem receita de fine-tuning completo do Gemma 4 31B (exporta checkpoint safetensors compatível com HF). Entra como braço opcional de P4 na condição do plano para LoRA e ajuste (D-18): A/B com ganho de 5 pontos percentuais ou mais nas unidades do N2. Exige 8 GPUs A100 ou H100 de 80 GB, logo só GPU alugada pontual (D-23). O dataset é D0: migrações de código público do demo. O modelo ajustado é servido no vLLM (rota `fix-n2` própria), não no NIM free tier.
 - **Limites.** Teto diário e disjuntor por rota no LiteLLM (D-21). Sem fallback pago automático: passar a um endpoint pago pede decisão nova.
 - **Ollama** sai do caminho padrão e fica só para desenvolvimento.
 
@@ -42,8 +43,10 @@ Rodar modelo local no notebook (8 GB de VRAM) é pesado, e o `qwen3:4b` (ADR-000
 - Segredos (chave do NIM, chave da OpenRouter) fora do Git (D-40).
 - Na proposta à empresa, as rotas externas são trocáveis pelo endpoint sancionado (Q-03). Um provedor de origem chinesa pode ser vetado.
 - **Não verificado em 2026-11-18.** Conferir antes de aceitar:
-  - termos do free tier do NIM para os dois candidatos da rota `fix-n2`, e se esse free tier retém ou treina com os prompts;
-  - licença do Gemma 4 (termos próprios do Google, não Apache-2.0) e origem do DeepSeek (provedor chinês, pode ser vetado na proposta à empresa);
+  - termos do free tier do NIM ("NVIDIA API Trial Terms of Service"), e se ele retém ou treina com os prompts;
+  - licença do Gemma 4: a página do NIM cita a NVIDIA Open Model License e também a Apache-2.0, sem dizer qual vale para quê;
+  - receita do NeMo Automodel para texto: a do guia é VLM (recibos com imagem); LoRA não aparece; não há fine-tuning hospedado na página do modelo;
+  - suporte a tool calling do Gemma 4 31B no NIM;
   - preço, limites e retenção de prompts do Decision-1.1 na OpenRouter (a página respondeu 404 na consulta);
   - versão publicada e licença do Switchyard;
   - se o Switchyard expõe API compatível com OpenAI ou precisa de integração própria no LiteLLM;
