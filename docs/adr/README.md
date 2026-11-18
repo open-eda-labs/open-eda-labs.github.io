@@ -12,3 +12,4 @@ Convenção: `NNNN-titulo-curto.md`, numeração sequencial, com as seções Est
 | [0004](0004-modelo-padrao-do-laboratorio.md) | Modelo padrão do laboratório: `qwen3:4b` | aceita |
 | [0005](0005-correcao-total-e-regra-de-ouro.md) | Correção 100% na última versão; fix sempre no parent ou na lib | aceita |
 | [0006](0006-modelos-por-rota-no-gateway.md) | Modelos por rota no gateway; roteador por A/B em P4 (Decision-1.1 ou Switchyard) | proposta |
+| [0007](0007-n2-dentro-do-pod-do-fix.md) | N2 roda dentro do pod do fix, harness do agent-step-images como base da imagem | aceita |
