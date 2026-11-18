@@ -30,28 +30,28 @@
     "semantic_hash": "12315dfab292ad97aa128fcbdf2dbc4c"
   },
   "agent-workflows/.github/workflows/ci.yml": {
-    "mtime": 1794703807.6949422,
-    "seen": 1794707424.6499038,
-    "ast_hash": "12315dfab292ad97aa128fcbdf2dbc4c",
-    "semantic_hash": "12315dfab292ad97aa128fcbdf2dbc4c"
+    "mtime": 1794882331.0385203,
+    "seen": 1794883293.2621884,
+    "ast_hash": "9cdfe2fc262b183bb9cd90ad953b3679",
+    "semantic_hash": ""
   },
   "demo-service/.github/workflows/ci.yml": {
-    "mtime": 1794705119.1598873,
-    "seen": 1794707424.649905,
-    "ast_hash": "f918f644a61df28491ccd4e47e0e9a03",
-    "semantic_hash": "f918f644a61df28491ccd4e47e0e9a03"
+    "mtime": 1794881765.2224565,
+    "seen": 1794883293.2622344,
+    "ast_hash": "c4e5fe1146c17727902dff66bae37fbc",
+    "semantic_hash": ""
   },
   "demo-service/chaos/run-scenarios.sh": {
-    "mtime": 1794705119.1638875,
-    "seen": 1794707424.6499057,
-    "ast_hash": "87f05921988b80f8838be9768212cca1",
-    "semantic_hash": "87f05921988b80f8838be9768212cca1"
+    "mtime": 1794881748.4819705,
+    "seen": 1794883293.2622354,
+    "ast_hash": "9210cffecbb2f9744deac37b20208549",
+    "semantic_hash": ""
   },
   "demo-service/pom.xml": {
-    "mtime": 1794704841.4119473,
-    "seen": 1794707424.6499066,
-    "ast_hash": "978897835bef7546e40541a58b95e3b1",
-    "semantic_hash": "978897835bef7546e40541a58b95e3b1"
+    "mtime": 1794881760.67908,
+    "seen": 1794883293.2622364,
+    "ast_hash": "f704f44c5da2c833a06ecc50fe356af1",
+    "semantic_hash": ""
   },
   "demo-service/src/main/java/labs/demo/App.java": {
     "mtime": 1794704596.9118564,
@@ -59,107 +59,29 @@
     "ast_hash": "da9c5ed229aeaadee8410317f48e0559",
     "semantic_hash": "da9c5ed229aeaadee8410317f48e0559"
   },
-  "demo-service/src/main/java/labs/demo/Config.java": {
-    "mtime": 1794704794.231868,
-    "seen": 1794707424.6499085,
-    "ast_hash": "7e2d754ab61b466f16022762691c4e41",
-    "semantic_hash": "7e2d754ab61b466f16022762691c4e41"
-  },
-  "demo-service/src/main/java/labs/demo/Downstream.java": {
-    "mtime": 1794704628.2078583,
-    "seen": 1794707424.6499095,
-    "ast_hash": "5b841a68c787bd066617769dc4c927ae",
-    "semantic_hash": "5b841a68c787bd066617769dc4c927ae"
-  },
-  "demo-service/src/main/java/labs/demo/Jwt.java": {
-    "mtime": 1794704618.0118575,
-    "seen": 1794707424.6499102,
-    "ast_hash": "45c73622a08beffaa1f0729450f2f638",
-    "semantic_hash": "45c73622a08beffaa1f0729450f2f638"
-  },
-  "demo-service/src/main/java/labs/demo/Metrics.java": {
-    "mtime": 1794704624.111858,
-    "seen": 1794707424.649911,
-    "ast_hash": "8929d034b9319a7cae0e17f3061a3912",
-    "semantic_hash": "8929d034b9319a7cae0e17f3061a3912"
-  },
   "demo-service/src/main/java/labs/demo/Routes.java": {
-    "mtime": 1794704612.5118573,
-    "seen": 1794707424.6499119,
-    "ast_hash": "c9baf44e6f421b0f4f9b17196a4ac29d",
-    "semantic_hash": "c9baf44e6f421b0f4f9b17196a4ac29d"
-  },
-  "demo-service/src/main/java/labs/demo/chaos/Chaos.java": {
-    "mtime": 1794704654.1038597,
-    "seen": 1794707424.6499126,
-    "ast_hash": "117cf2759b0c48fb0cfeab02a7cc0da8",
-    "semantic_hash": "117cf2759b0c48fb0cfeab02a7cc0da8"
-  },
-  "demo-service/src/main/java/labs/demo/chaos/ErrorFault.java": {
-    "mtime": 1794704662.0958602,
-    "seen": 1794707424.6499135,
-    "ast_hash": "4be32ddd21f33ec144f211b3fb881231",
-    "semantic_hash": "4be32ddd21f33ec144f211b3fb881231"
-  },
-  "demo-service/src/main/java/labs/demo/chaos/History.java": {
-    "mtime": 1794704658.44786,
-    "seen": 1794707424.6499143,
-    "ast_hash": "90203e35e72e9c6039dd580eb7f995ab",
-    "semantic_hash": "90203e35e72e9c6039dd580eb7f995ab"
-  },
-  "demo-service/src/main/java/labs/demo/chaos/LatencyFault.java": {
-    "mtime": 1794704660.6958601,
-    "seen": 1794707424.6499152,
-    "ast_hash": "af3432ff4ba06e91a0d613820ea51701",
-    "semantic_hash": "af3432ff4ba06e91a0d613820ea51701"
-  },
-  "demo-service/src/main/java/labs/demo/chaos/OomFault.java": {
-    "mtime": 1794705070.7606282,
-    "seen": 1794707424.6499162,
-    "ast_hash": "0043d6853129e78f8e6b50f0b3f55153",
-    "semantic_hash": "0043d6853129e78f8e6b50f0b3f55153"
-  },
-  "demo-service/src/main/java/labs/demo/chaos/Scenario.java": {
-    "mtime": 1794704638.0438588,
-    "seen": 1794707424.649917,
-    "ast_hash": "f6bfb118bf787bf3bcae1a7810a99d52",
-    "semantic_hash": "f6bfb118bf787bf3bcae1a7810a99d52"
-  },
-  "demo-service/src/main/java/labs/demo/chaos/Scenarios.java": {
-    "mtime": 1794704645.2478592,
-    "seen": 1794707424.6499176,
-    "ast_hash": "4824f089941464c026cefe7b79422ac3",
-    "semantic_hash": "4824f089941464c026cefe7b79422ac3"
-  },
-  "demo-service/src/main/resources/scenarios.yaml": {
-    "mtime": 1794704677.681156,
-    "seen": 1794707424.649919,
-    "ast_hash": "cc68b45eacfa90724d9224865137cbd1",
-    "semantic_hash": "cc68b45eacfa90724d9224865137cbd1"
+    "mtime": 1794881748.23603,
+    "seen": 1794883293.2622383,
+    "ast_hash": "4e087b9be82aa350715a012e379e5058",
+    "semantic_hash": ""
   },
   "demo-service/src/test/java/labs/demo/AppIntegrationTest.java": {
-    "mtime": 1794704729.3998642,
-    "seen": 1794707424.6499197,
-    "ast_hash": "a18286050d1d56f6f42c9216b529029b",
-    "semantic_hash": "a18286050d1d56f6f42c9216b529029b"
+    "mtime": 1794881748.3742366,
+    "seen": 1794883293.262239,
+    "ast_hash": "b2eeaaba727929cc0d97ee0c2f646b6c",
+    "semantic_hash": ""
   },
   "demo-service/src/test/java/labs/demo/CommonsConfiguration2Test.java": {
-    "mtime": 1794704709.5604353,
-    "seen": 1794707424.6499205,
-    "ast_hash": "e54523cccfb52830aa2bcc844eddd720",
-    "semantic_hash": "e54523cccfb52830aa2bcc844eddd720"
-  },
-  "demo-service/src/test/java/labs/demo/HttpClientTest.java": {
-    "mtime": 1794704709.55013,
-    "seen": 1794707424.6499212,
-    "ast_hash": "54b3fd0762346f5537f2a4b352f5d26d",
-    "semantic_hash": "54b3fd0762346f5537f2a4b352f5d26d"
+    "mtime": 1794881748.4768643,
+    "seen": 1794883293.2622397,
+    "ast_hash": "1efd29ad66bf056a5d87f79ab2919435",
+    "semantic_hash": ""
   },
   "demo-service/src/test/java/labs/demo/JacksonDatabindTest.java": {
-    "mtime": 1794704709.5574102,
-    "seen": 1794707424.6499221,
-    "ast_hash": "f1d1ce7f5208b4e3139863cc79b938e9",
-    "semantic_hash": "f1d1ce7f5208b4e3139863cc79b938e9"
+    "mtime": 1794881742.5725057,
+    "seen": 1794883293.262241,
+    "ast_hash": "155c2bf1b099d53fdb4ec9935b2a9fac",
+    "semantic_hash": ""
   },
   "demo-service/src/test/java/labs/demo/Log4jCoreTest.java": {
     "mtime": 1794704709.547558,
@@ -167,101 +89,11 @@
     "ast_hash": "7fd336e874791c3933c11710c528469e",
     "semantic_hash": "7fd336e874791c3933c11710c528469e"
   },
-  "demo-service/src/test/java/labs/demo/NimbusJoseJwtTest.java": {
-    "mtime": 1794704709.5528789,
-    "seen": 1794707424.6499236,
-    "ast_hash": "230c9a96ea77da9a88d0aa8954e28427",
-    "semantic_hash": "230c9a96ea77da9a88d0aa8954e28427"
-  },
-  "demo-service/src/test/java/labs/demo/OkioTest.java": {
-    "mtime": 1794704709.5590305,
-    "seen": 1794707424.6499245,
-    "ast_hash": "313e34b4a47e3a55a533f4ff3b90b67d",
-    "semantic_hash": "313e34b4a47e3a55a533f4ff3b90b67d"
-  },
   "demo-service/src/test/java/labs/demo/OrgJsonTest.java": {
     "mtime": 1794704709.5545123,
     "seen": 1794707424.6499252,
     "ast_hash": "539df8e1d52048c035e8a9863885da5c",
     "semantic_hash": "539df8e1d52048c035e8a9863885da5c"
-  },
-  "demo-service/src/test/java/labs/demo/ProtobufJavaTest.java": {
-    "mtime": 1794704709.5557725,
-    "seen": 1794707424.6499262,
-    "ast_hash": "6090dc744572bbb5c597b766fb39f07e",
-    "semantic_hash": "6090dc744572bbb5c597b766fb39f07e"
-  },
-  "demo-service/src/test/java/labs/demo/SpringWebTest.java": {
-    "mtime": 1794704709.5518367,
-    "seen": 1794707424.6499271,
-    "ast_hash": "aecd6331895e5db33ce1b067bb36bb49",
-    "semantic_hash": "aecd6331895e5db33ce1b067bb36bb49"
-  },
-  "demo-service/src/test/java/labs/demo/StubServer.java": {
-    "mtime": 1794704709.5487306,
-    "seen": 1794707424.6499279,
-    "ast_hash": "6cc5ebd3014103926e114d0930cb43a6",
-    "semantic_hash": "6cc5ebd3014103926e114d0930cb43a6"
-  },
-  "demo-service/src/test/java/labs/demo/chaos/CommonsBeanutilsTest.java": {
-    "mtime": 1794704753.4401367,
-    "seen": 1794707424.6499288,
-    "ast_hash": "f07ee405f6780f36adf13909908ed288",
-    "semantic_hash": "f07ee405f6780f36adf13909908ed288"
-  },
-  "demo-service/src/test/java/labs/demo/chaos/CommonsCompressTest.java": {
-    "mtime": 1794704753.4414883,
-    "seen": 1794707424.6499295,
-    "ast_hash": "0362c81fd4125faaad6daef07eb0a2fa",
-    "semantic_hash": "0362c81fd4125faaad6daef07eb0a2fa"
-  },
-  "demo-service/src/test/java/labs/demo/chaos/CommonsIoTest.java": {
-    "mtime": 1794704753.4308217,
-    "seen": 1794707424.6499302,
-    "ast_hash": "722e55d5ad528ac1617794045c6af76c",
-    "semantic_hash": "722e55d5ad528ac1617794045c6af76c"
-  },
-  "demo-service/src/test/java/labs/demo/chaos/CommonsLang3Test.java": {
-    "mtime": 1794704753.4322822,
-    "seen": 1794707424.649931,
-    "ast_hash": "65933b2a92b28c2d8e4d77672ae1fbf7",
-    "semantic_hash": "65933b2a92b28c2d8e4d77672ae1fbf7"
-  },
-  "demo-service/src/test/java/labs/demo/chaos/CommonsTextTest.java": {
-    "mtime": 1794704753.4273164,
-    "seen": 1794707424.6499321,
-    "ast_hash": "5dbe070372f20942e54455f3e206553b",
-    "semantic_hash": "5dbe070372f20942e54455f3e206553b"
-  },
-  "demo-service/src/test/java/labs/demo/chaos/GuavaTest.java": {
-    "mtime": 1794704753.4290204,
-    "seen": 1794707424.6499329,
-    "ast_hash": "3a11ef17c0cebd12cf09d77d2ae9ce79",
-    "semantic_hash": "3a11ef17c0cebd12cf09d77d2ae9ce79"
-  },
-  "demo-service/src/test/java/labs/demo/chaos/H2Test.java": {
-    "mtime": 1794704753.4370313,
-    "seen": 1794707424.6499336,
-    "ast_hash": "026e0ea9663c5b05d5bf5ab077a77020",
-    "semantic_hash": "026e0ea9663c5b05d5bf5ab077a77020"
-  },
-  "demo-service/src/test/java/labs/demo/chaos/JsonSmartTest.java": {
-    "mtime": 1794704753.4339714,
-    "seen": 1794707424.6499343,
-    "ast_hash": "e00b53b0d5b3fb1c68d0159fee27fc57",
-    "semantic_hash": "e00b53b0d5b3fb1c68d0159fee27fc57"
-  },
-  "demo-service/src/test/java/labs/demo/chaos/SnakeYamlTest.java": {
-    "mtime": 1794704753.4356303,
-    "seen": 1794707424.6499348,
-    "ast_hash": "f0ac598b5c2bd6a25d0fc752b42b62e3",
-    "semantic_hash": "f0ac598b5c2bd6a25d0fc752b42b62e3"
-  },
-  "demo-service/src/test/java/labs/demo/chaos/XStreamTest.java": {
-    "mtime": 1794704753.438478,
-    "seen": 1794707424.6499372,
-    "ast_hash": "e0f0465564dfdbb88569d32095dbe91c",
-    "semantic_hash": "e0f0465564dfdbb88569d32095dbe91c"
   },
   "intake-adapter/.github/workflows/ci.yml": {
     "mtime": 1794703807.6946838,
@@ -270,10 +102,10 @@
     "semantic_hash": "12315dfab292ad97aa128fcbdf2dbc4c"
   },
   "lab-infra/.github/workflows/ci.yml": {
-    "mtime": 1794703807.6951637,
-    "seen": 1794707424.6499386,
-    "ast_hash": "12315dfab292ad97aa128fcbdf2dbc4c",
-    "semantic_hash": "12315dfab292ad97aa128fcbdf2dbc4c"
+    "mtime": 1794881754.4036052,
+    "seen": 1794883293.2622447,
+    "ast_hash": "38f8752452155ae9712eb759e1ec073a",
+    "semantic_hash": ""
   },
   "open-eda-labs.github.io/.github/workflows/ci.yml": {
     "mtime": 1794703807.6964502,
@@ -348,22 +180,22 @@
     "semantic_hash": "4573d1cd2a5fc58d41abcae38fac95bf"
   },
   "agent-workflows/README.md": {
-    "mtime": 1794703807.6950643,
-    "seen": 1794707424.6499503,
-    "ast_hash": "1de0d60f022e68bbb6e7192383201215",
-    "semantic_hash": "1de0d60f022e68bbb6e7192383201215"
+    "mtime": 1794882419.6123087,
+    "seen": 1794883293.2622638,
+    "ast_hash": "ffb242198e3dfe81f9cf46e8edebb478",
+    "semantic_hash": ""
   },
   "demo-service/README.md": {
-    "mtime": 1794705145.2217088,
-    "seen": 1794707424.649951,
-    "ast_hash": "4447975327bd7bcca7628eacdf25e7b2",
-    "semantic_hash": "4447975327bd7bcca7628eacdf25e7b2"
+    "mtime": 1794881760.6794364,
+    "seen": 1794883293.2622695,
+    "ast_hash": "e105651e49fa280fff35e1d58b54b70d",
+    "semantic_hash": ""
   },
   "demo-service/docs/bump-matrix.md": {
-    "mtime": 1794705320.4038994,
-    "seen": 1794707424.6499517,
-    "ast_hash": "7f6721d1a77302c3a2360a4721e57b05",
-    "semantic_hash": "7f6721d1a77302c3a2360a4721e57b05"
+    "mtime": 1794881748.6896172,
+    "seen": 1794883293.2622702,
+    "ast_hash": "84c25d080c45d899e5aa9ff30b67b508",
+    "semantic_hash": ""
   },
   "demo-service/docs/dependency-proposal.md": {
     "mtime": 1794705168.6451707,
@@ -384,28 +216,28 @@
     "semantic_hash": "63b5c9babf5e4c964411d4fe3f88d1b3"
   },
   "lab-infra/README.md": {
-    "mtime": 1794703807.6956785,
-    "seen": 1794707424.649955,
-    "ast_hash": "8c08aec9b603b1dbbe445de7585b7ea4",
-    "semantic_hash": "8c08aec9b603b1dbbe445de7585b7ea4"
+    "mtime": 1794881788.6254237,
+    "seen": 1794883293.2622738,
+    "ast_hash": "b90fe41de9cbb6b40462d05c11f2787c",
+    "semantic_hash": ""
   },
   "open-eda-labs.github.io/CLAUDE.md": {
-    "mtime": 1794706533.7599096,
-    "seen": 1794707424.6499557,
-    "ast_hash": "9e933d786f948780300db3a0801583aa",
-    "semantic_hash": "9e933d786f948780300db3a0801583aa"
+    "mtime": 1794751713.3504143,
+    "seen": 1794785107.7501152,
+    "ast_hash": "8e58b2caaf28acaaa1e0b05b788f3645",
+    "semantic_hash": ""
   },
   "open-eda-labs.github.io/PROGRESS.md": {
-    "mtime": 1794706533.7601945,
-    "seen": 1794707424.6499567,
-    "ast_hash": "07373693be12d9d34c0ab1814398ffca",
-    "semantic_hash": "07373693be12d9d34c0ab1814398ffca"
+    "mtime": 1794881818.7279294,
+    "seen": 1794883293.2622776,
+    "ast_hash": "4a53e59fadb599e5395308d610dac4dc",
+    "semantic_hash": ""
   },
   "open-eda-labs.github.io/README.md": {
-    "mtime": 1794706533.758599,
-    "seen": 1794707424.6499574,
-    "ast_hash": "6dfe1fc6361892dc6e82775221952107",
-    "semantic_hash": "6dfe1fc6361892dc6e82775221952107"
+    "mtime": 1794707527.2254992,
+    "seen": 1794748278.4736953,
+    "ast_hash": "4789d6b87fa581f16952f766e8087474",
+    "semantic_hash": ""
   },
   "open-eda-labs.github.io/docs/PLANO_MESTRE.md": {
     "mtime": 1794688061.7353475,
@@ -414,28 +246,28 @@
     "semantic_hash": "60c6f83d27d794b2813b74c5709979eb"
   },
   "open-eda-labs.github.io/docs/adr/0001-convencao-yaml-grpc.md": {
-    "mtime": 1794706334.3589306,
-    "seen": 1794707424.6499588,
-    "ast_hash": "96db5aaf0be44667f5edb3dbf0bf8cad",
-    "semantic_hash": "96db5aaf0be44667f5edb3dbf0bf8cad"
+    "mtime": 1794881818.7273896,
+    "seen": 1794883293.2622802,
+    "ast_hash": "affaec8737c30f445c664da9dc0cbf98",
+    "semantic_hash": ""
   },
   "open-eda-labs.github.io/docs/adr/0002-base-do-demo-service.md": {
-    "mtime": 1794706334.3602588,
-    "seen": 1794707424.64996,
-    "ast_hash": "1134c0b3e7083044b9d37c6ae74f50cd",
-    "semantic_hash": "1134c0b3e7083044b9d37c6ae74f50cd"
+    "mtime": 1794751713.350138,
+    "seen": 1794785107.7501197,
+    "ast_hash": "6cd3780949bce4698e64a528cebe504d",
+    "semantic_hash": ""
   },
   "open-eda-labs.github.io/docs/adr/0003-repositorio-central-pagina-e-memoria.md": {
-    "mtime": 1794706533.7591815,
-    "seen": 1794707424.6499608,
-    "ast_hash": "e3589d239e3629044edfcde142e4436e",
-    "semantic_hash": "e3589d239e3629044edfcde142e4436e"
+    "mtime": 1794707802.3813183,
+    "seen": 1794748278.4737003,
+    "ast_hash": "21be7dcfd20209b43035bdeaec635dd8",
+    "semantic_hash": ""
   },
   "open-eda-labs.github.io/docs/adr/README.md": {
-    "mtime": 1794706334.357118,
-    "seen": 1794707424.6499615,
-    "ast_hash": "06042a508f3f21a1e20274808cbfbbb0",
-    "semantic_hash": "06042a508f3f21a1e20274808cbfbbb0"
+    "mtime": 1794751713.349901,
+    "seen": 1794785107.7501235,
+    "ast_hash": "6a1337708784e5a0df30c84fc546420f",
+    "semantic_hash": ""
   },
   "open-eda-labs.github.io/docs/contradicoes-plano.md": {
     "mtime": 1794706334.3830268,
@@ -484,5 +316,407 @@
     "seen": 1794707424.649969,
     "ast_hash": "007fb132c0f22ada44e3b8d39aad9d73",
     "semantic_hash": "007fb132c0f22ada44e3b8d39aad9d73"
+  },
+  "agent-workflows/steps/common.py": {
+    "mtime": 1794882035.547325,
+    "seen": 1794883293.26219,
+    "ast_hash": "e0a773e4445479aae53cdfa06d45528b",
+    "semantic_hash": ""
+  },
+  "agent-workflows/steps/fix/fix.py": {
+    "mtime": 1794882172.2804155,
+    "seen": 1794883293.262191,
+    "ast_hash": "c0444581b89fdbe0329afdaba9abddd8",
+    "semantic_hash": ""
+  },
+  "agent-workflows/steps/notify/notify.py": {
+    "mtime": 1794882260.6615033,
+    "seen": 1794883293.262192,
+    "ast_hash": "f0c3379575abee3d1c02730d0fe10a98",
+    "semantic_hash": ""
+  },
+  "agent-workflows/steps/publish/publish.py": {
+    "mtime": 1794882243.2802813,
+    "seen": 1794883293.2621932,
+    "ast_hash": "53ee0d9323985af492550de025d0f2da",
+    "semantic_hash": ""
+  },
+  "agent-workflows/steps/scan/scan.py": {
+    "mtime": 1794881990.3958013,
+    "seen": 1794883293.2621942,
+    "ast_hash": "b8cb9201116e96694855c1fe59f81412",
+    "semantic_hash": ""
+  },
+  "agent-workflows/tests/contract/alert-event.yaml": {
+    "mtime": 1794745679.399004,
+    "seen": 1794748278.4735944,
+    "ast_hash": "0759aafc792a75291b97603cec6c9c95",
+    "semantic_hash": ""
+  },
+  "agent-workflows/tests/contract/recommendation.yaml": {
+    "mtime": 1794745679.400455,
+    "seen": 1794748278.4735954,
+    "ast_hash": "536f362fd72230122e867fba09fdca23",
+    "semantic_hash": ""
+  },
+  "agent-workflows/tests/fixtures/osv-scanner.json": {
+    "mtime": 1794745785.3738651,
+    "seen": 1794748278.4735963,
+    "ast_hash": "e6b80b71ecb02f8659e335544c39a06a",
+    "semantic_hash": ""
+  },
+  "agent-workflows/tests/test_fix.py": {
+    "mtime": 1794882144.9887135,
+    "seen": 1794883293.2622006,
+    "ast_hash": "dbf46f1f80967056bab44efdc57d20c4",
+    "semantic_hash": ""
+  },
+  "agent-workflows/tests/test_publish_notify.py": {
+    "mtime": 1794882260.6619897,
+    "seen": 1794883293.2622015,
+    "ast_hash": "c34f1dd425638acd5fd9c280054e25a5",
+    "semantic_hash": ""
+  },
+  "agent-workflows/tests/test_scan.py": {
+    "mtime": 1794882082.7921479,
+    "seen": 1794883293.2622023,
+    "ast_hash": "16a98ab517855fd00a577817c289cd97",
+    "semantic_hash": ""
+  },
+  "agent-workflows/workflows/vuln-fix.yaml": {
+    "mtime": 1794882309.117475,
+    "seen": 1794883293.2622044,
+    "ast_hash": "ca012cd9787bd1f7c6d3a43e889c36fb",
+    "semantic_hash": ""
+  },
+  "agent-workflows/workflows/vuln-scan.yaml": {
+    "mtime": 1794882317.3332434,
+    "seen": 1794883293.2622051,
+    "ast_hash": "a518697a7ab1c1ccfb6698299f8894ab",
+    "semantic_hash": ""
+  },
+  "lab-infra/check-model.sh": {
+    "mtime": 1794746194.416334,
+    "seen": 1794748278.4736586,
+    "ast_hash": "28ee98e6d9545a56c0b1673b562b2a2a",
+    "semantic_hash": ""
+  },
+  "lab-infra/footprint.sh": {
+    "mtime": 1794745497.4527092,
+    "seen": 1794748278.4736598,
+    "ast_hash": "daf0a414a54fad246d1afffed77a0867",
+    "semantic_hash": ""
+  },
+  "lab-infra/k8s/grafana.yaml": {
+    "mtime": 1794746194.416334,
+    "seen": 1794748278.473661,
+    "ast_hash": "6f4f5cf1e03cb876e54ba6165e35166f",
+    "semantic_hash": ""
+  },
+  "lab-infra/k8s/influxdb.yaml": {
+    "mtime": 1794746194.416334,
+    "seen": 1794748278.473662,
+    "ast_hash": "8896ed45dbad15275506557d5cbf8ef7",
+    "semantic_hash": ""
+  },
+  "lab-infra/k8s/kustomization.yaml": {
+    "mtime": 1794881739.5000885,
+    "seen": 1794883293.262249,
+    "ast_hash": "ee41f16d2ba1cb8f676a17949439d3a8",
+    "semantic_hash": ""
+  },
+  "lab-infra/k8s/mlflow.yaml": {
+    "mtime": 1794746194.416334,
+    "seen": 1794748278.4736643,
+    "ast_hash": "f24f31e7a32968c09b70aba5d2f6d848",
+    "semantic_hash": ""
+  },
+  "lab-infra/k8s/namespaces.yaml": {
+    "mtime": 1794745439.7778447,
+    "seen": 1794748278.4736652,
+    "ast_hash": "95177564214fc6c8d512a0034c36b510",
+    "semantic_hash": ""
+  },
+  "agent-workflows/requirements.txt": {
+    "mtime": 1794882331.0382922,
+    "seen": 1794883293.2622664,
+    "ast_hash": "0167411a54877c4778af6a247c089fdb",
+    "semantic_hash": ""
+  },
+  "lab-infra/wslconfig.md": {
+    "mtime": 1794746194.416334,
+    "seen": 1794748278.4736917,
+    "ast_hash": "5a09d2d9a8d4666841c3a0fb56eef4a0",
+    "semantic_hash": ""
+  },
+  "open-eda-labs.github.io/docs/adr/0004-modelo-padrao-do-laboratorio.md": {
+    "mtime": 1794881818.7276437,
+    "seen": 1794883293.2622828,
+    "ast_hash": "a69713141808febfbdcd8517d7e7d1a5",
+    "semantic_hash": ""
+  },
+  "agent-workflows/tests/test_common.py": {
+    "mtime": 1794882344.7959018,
+    "seen": 1794883293.262198,
+    "ast_hash": "bcd3ec61829de072ea3741e26ff864c7",
+    "semantic_hash": ""
+  },
+  "demo-lib/.github/workflows/ci.yml": {
+    "mtime": 1794881742.5124977,
+    "seen": 1794883293.2622063,
+    "ast_hash": "0757a56dec0d9c2bf1ccf87e8b8055ea",
+    "semantic_hash": ""
+  },
+  "demo-lib/.github/workflows/release.yml": {
+    "mtime": 1794781033.048218,
+    "seen": 1794785107.7500281,
+    "ast_hash": "17fb52c8c33ac28d80e758ce2d68ea2e",
+    "semantic_hash": ""
+  },
+  "demo-lib/pom.xml": {
+    "mtime": 1794881742.512313,
+    "seen": 1794883293.262208,
+    "ast_hash": "2469a340229d5e3453e77b6abae8cf81",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/main/resources/scenarios.yaml": {
+    "mtime": 1794881730.9120615,
+    "seen": 1794883293.2622178,
+    "ast_hash": "3f6f5abb89ce908b39d0368bdd123c63",
+    "semantic_hash": ""
+  },
+  "demo-parent/.github/workflows/ci.yml": {
+    "mtime": 1794781033.049189,
+    "seen": 1794785107.7500584,
+    "ast_hash": "10853d69ee91917b83fb6e748243b495",
+    "semantic_hash": ""
+  },
+  "demo-parent/.github/workflows/release.yml": {
+    "mtime": 1794781033.0471613,
+    "seen": 1794785107.7500596,
+    "ast_hash": "17fb52c8c33ac28d80e758ce2d68ea2e",
+    "semantic_hash": ""
+  },
+  "demo-parent/pom.xml": {
+    "mtime": 1794781033.0461862,
+    "seen": 1794785107.7500603,
+    "ast_hash": "dd7473a4b81a8d5743de2d6676a192ae",
+    "semantic_hash": ""
+  },
+  "agent-workflows/docs/fix-measurement.md": {
+    "mtime": 1794883285.7881086,
+    "seen": 1794883293.2622645,
+    "ast_hash": "ca30262ae38dab1611876cf2d4e34899",
+    "semantic_hash": ""
+  },
+  "demo-lib/README.md": {
+    "mtime": 1794881742.5132473,
+    "seen": 1794883293.2622676,
+    "ast_hash": "0d446354276642c444a8b710afe47ce6",
+    "semantic_hash": ""
+  },
+  "demo-parent/README.md": {
+    "mtime": 1794881760.6913974,
+    "seen": 1794883293.2622683,
+    "ast_hash": "2769c3f9b94f83367222ffa08b54d3ec",
+    "semantic_hash": ""
+  },
+  "open-eda-labs.github.io/docs/adr/0005-correcao-total-e-regra-de-ouro.md": {
+    "mtime": 1794882627.5179443,
+    "seen": 1794883293.2622836,
+    "ast_hash": "df4741ee46a8bea3699a79f34a59af36",
+    "semantic_hash": ""
+  },
+  "agent-workflows/tests/test_contract_copy.py": {
+    "mtime": 1794882344.7778943,
+    "seen": 1794883293.2621994,
+    "ast_hash": "dad3396978f67010543ff0b5c436df15",
+    "semantic_hash": ""
+  },
+  "agent-workflows/workflows/rbac.yaml": {
+    "mtime": 1794882309.1155655,
+    "seen": 1794883293.2622037,
+    "ast_hash": "f781e06253ce69dbda98d96781bdfb2d",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/main/java/labs/demo/lib/Config.java": {
+    "mtime": 1794881824.534907,
+    "seen": 1794883293.262209,
+    "ast_hash": "7f7284c563f536411c3896a74a2d6c06",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/main/java/labs/demo/lib/Downstream.java": {
+    "mtime": 1794881824.5339434,
+    "seen": 1794883293.26221,
+    "ast_hash": "de5bbbfeb0db2762ca2923fb089d74e4",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/main/java/labs/demo/lib/Jwt.java": {
+    "mtime": 1794881824.5350094,
+    "seen": 1794883293.2622106,
+    "ast_hash": "d9e33d0adcb0b1548c4861da8c56bd45",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/main/java/labs/demo/lib/Metrics.java": {
+    "mtime": 1794881824.5340478,
+    "seen": 1794883293.2622113,
+    "ast_hash": "0abd05ced65b2a3d0150318dfda2048b",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/main/java/labs/demo/lib/chaos/Chaos.java": {
+    "mtime": 1794881824.534613,
+    "seen": 1794883293.262212,
+    "ast_hash": "0766c7d3c37af6dcd277fd9677564005",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/main/java/labs/demo/lib/chaos/ErrorFault.java": {
+    "mtime": 1794881824.5343623,
+    "seen": 1794883293.2622128,
+    "ast_hash": "172b421cea55a16e3ecad6d1211fc1c5",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/main/java/labs/demo/lib/chaos/History.java": {
+    "mtime": 1794881824.5347126,
+    "seen": 1794883293.2622137,
+    "ast_hash": "94aa43d0939fdb1d2845acf53ee19870",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/main/java/labs/demo/lib/chaos/LatencyFault.java": {
+    "mtime": 1794881824.5342462,
+    "seen": 1794883293.2622144,
+    "ast_hash": "9a47a859a57f1998e693ce3971c7e58d",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/main/java/labs/demo/lib/chaos/OomFault.java": {
+    "mtime": 1794881824.5341506,
+    "seen": 1794883293.2622151,
+    "ast_hash": "2ca0ddfcf40ad5e0647572364e37815f",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/main/java/labs/demo/lib/chaos/Scenario.java": {
+    "mtime": 1794881824.5348113,
+    "seen": 1794883293.2622156,
+    "ast_hash": "0c768990e5661b27973db6101c5c2a3b",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/main/java/labs/demo/lib/chaos/Scenarios.java": {
+    "mtime": 1794881824.5344923,
+    "seen": 1794883293.2622168,
+    "ast_hash": "89ab30cf305d7b9cfea1a309c9e34b6e",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/test/java/labs/demo/lib/HttpClientTest.java": {
+    "mtime": 1794881824.5336442,
+    "seen": 1794883293.2622185,
+    "ast_hash": "6091ff6e49719a9b651c9b5e2e9ecc47",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/test/java/labs/demo/lib/NimbusJoseJwtTest.java": {
+    "mtime": 1794881824.5335455,
+    "seen": 1794883293.2622192,
+    "ast_hash": "7d10327bb13ab1dffd8f8167f4d25139",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/test/java/labs/demo/lib/OkioTest.java": {
+    "mtime": 1794881824.5334477,
+    "seen": 1794883293.2622201,
+    "ast_hash": "900acb53a8ca3e66bc48f816a34ea035",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/test/java/labs/demo/lib/ProtobufJavaTest.java": {
+    "mtime": 1794881824.5338402,
+    "seen": 1794883293.2622209,
+    "ast_hash": "9cc5eeb1607667e6d3e4e6fc4e598bc6",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/test/java/labs/demo/lib/SpringWebTest.java": {
+    "mtime": 1794881824.5333412,
+    "seen": 1794883293.2622213,
+    "ast_hash": "7c1464e28a402d324d1398bbe7404fb3",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/test/java/labs/demo/lib/StubServer.java": {
+    "mtime": 1794881824.5337436,
+    "seen": 1794883293.262222,
+    "ast_hash": "9d325f964cb82b7157a022a76b047b86",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/test/java/labs/demo/lib/chaos/CommonsBeanutilsTest.java": {
+    "mtime": 1794881824.5326068,
+    "seen": 1794883293.2622228,
+    "ast_hash": "fc1e6b876c30911d27ab69d4a7757987",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/test/java/labs/demo/lib/chaos/CommonsCompressTest.java": {
+    "mtime": 1794881824.5331223,
+    "seen": 1794883293.2622237,
+    "ast_hash": "14f066a7cccc14159ebdc2b44ecef266",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/test/java/labs/demo/lib/chaos/CommonsIoTest.java": {
+    "mtime": 1794881824.5330229,
+    "seen": 1794883293.2622247,
+    "ast_hash": "63a6e061bae2cf82335a259da6ca9c0f",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/test/java/labs/demo/lib/chaos/CommonsLang3Test.java": {
+    "mtime": 1794881824.5328186,
+    "seen": 1794883293.2622254,
+    "ast_hash": "0edce6d598c9dcb37d3144f05d789c68",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/test/java/labs/demo/lib/chaos/CommonsTextTest.java": {
+    "mtime": 1794881824.5324957,
+    "seen": 1794883293.262226,
+    "ast_hash": "ba26534e5fdd050fa30c9f7257355029",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/test/java/labs/demo/lib/chaos/GuavaTest.java": {
+    "mtime": 1794881824.5332198,
+    "seen": 1794883293.262227,
+    "ast_hash": "1fc3e10e3a12f6e359c1bc5e55b84f6b",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/test/java/labs/demo/lib/chaos/H2Test.java": {
+    "mtime": 1794881824.532019,
+    "seen": 1794883293.2622278,
+    "ast_hash": "aa4c539c72c5f03b0292e696a9933c61",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/test/java/labs/demo/lib/chaos/JsonSmartTest.java": {
+    "mtime": 1794881824.5327125,
+    "seen": 1794883293.2622287,
+    "ast_hash": "5bf3c5e13ae7a3e6f0a8f1ab118f44f4",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/test/java/labs/demo/lib/chaos/SnakeYamlTest.java": {
+    "mtime": 1794881824.5329218,
+    "seen": 1794883293.2622294,
+    "ast_hash": "edee1d1b963f91cbd1262de10bf7b955",
+    "semantic_hash": ""
+  },
+  "demo-lib/src/test/java/labs/demo/lib/chaos/XStreamTest.java": {
+    "mtime": 1794881824.5323558,
+    "seen": 1794883293.2622302,
+    "ast_hash": "4156b13511c8c65ca35b872a817a5192",
+    "semantic_hash": ""
+  },
+  "lab-infra/k8s/networkpolicy.yaml": {
+    "mtime": 1794881739.5001314,
+    "seen": 1794883293.2622516,
+    "ast_hash": "9e7d783821f5e73321cc9eba9ced84d9",
+    "semantic_hash": ""
+  },
+  "agent-workflows/requirements-dev.txt": {
+    "mtime": 1794882331.0383492,
+    "seen": 1794883293.2622657,
+    "ast_hash": "b4af1ab8531d5f82c71fafd455c90c6d",
+    "semantic_hash": ""
+  },
+  "lab-infra/checksums.txt": {
+    "mtime": 1794881739.4996376,
+    "seen": 1794883293.2622745,
+    "ast_hash": "619bb9be69b435cfaf5bec1f84c50804",
+    "semantic_hash": ""
   }
 }

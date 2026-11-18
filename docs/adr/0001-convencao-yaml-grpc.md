@@ -17,6 +17,7 @@ O kickoff copiou a mesma configuração de lint para nove repositórios e escrev
 ## Consequências
 
 - Mudar uma regra de lint é um PR no `.github`, não um por repositório.
+- Exceção deliberada a D-40 (2026-11-17): os repositórios referenciam o workflow reutilizável da própria org como `lint.yml@main`, uma referência mutável. Pinar por SHA desfaria o ganho acima. Actions de terceiros continuam devendo o pin por SHA.
 - D-10, D-11 e a tabela de repositórios do plano ainda citam os schemas como `.json`; o arquivo que os passos emitem em runtime continua `recommendation.json`.
 - Falta confirmar em P3 que o serviço de eventos do Argo por gRPC se comporta como o endpoint HTTP descrito no plano, na versão pinada.
 - Nenhum `.proto` próprio existe ainda: só será escrito quando houver um segundo serviço próprio para chamá-lo.

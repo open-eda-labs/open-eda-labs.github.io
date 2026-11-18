@@ -16,6 +16,7 @@ Decisão nova, tomada depois do plano, vira um ADR em `docs/adr/` (convenção e
 - Classes de dado D0 a D3 (D-42): D3 nunca vai a modelo, trace ou MLflow.
 - Laboratório com poucas peças em padrão de produção: tudo como código, versões pinadas, segredos fora do Git, recriar do zero com um comando (D-40).
 - Ecossistema do vuln fixer: Maven (D-29). Detecção: OSV-Scanner em CronWorkflow (D-30).
+- Vuln fixer (ADR-0005): o alvo é a última versão publicada no Maven Central; corrigido é re-scan limpo com build e testes verdes; o fix nasce no `demo-parent` ou na `demo-lib`, nunca no serviço, que só sobe a versão que consome.
 - Convenção antes de configuração: o padrão da org vale sem arquivo de config por repositório (o lint mora no workflow reutilizável do `.github`). YAML para configuração, schemas e fixtures. gRPC entre serviços próprios (o intake-adapter fala com a API gRPC do Argo Server); HTTP+JSON só nas bordas externas: webhooks de alerta e API do modelo (ADR-0001).
 
 ## Hardware
