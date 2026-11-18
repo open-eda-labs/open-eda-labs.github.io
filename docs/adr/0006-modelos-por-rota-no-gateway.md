@@ -28,7 +28,7 @@ Rodar modelo local no notebook (8 GB de VRAM) é pesado, e o `qwen3:4b` (ADR-000
   - Calibração (Brier) só para o braço que devolve probabilidade: o Decision-1.1, e o Switchyard se expuser score.
   - O vencedor fica com a rota. Em empate, fica o Switchyard, que não depende de endpoint externo nem manda prompt para fora.
 - **Rota `fix-n2`.** Único candidato hoje: Gemma 4 31B. Outro modelo do NIM (o Kimi, se voltar) entra rodando as mesmas unidades do N2; fica o que fechar mais unidades com build, testes e re-scan verdes, e, em empate, o de menor latência. O NIM não suporta saída estruturada para esse modelo: o harness não depende de `response_format`.
-- **Fine-tuning do Gemma 4 (braço de P4).** O NeMo Automodel tem receita de fine-tuning completo do Gemma 4 31B (exporta checkpoint safetensors compatível com HF). Entra como braço opcional de P4 na condição do plano para LoRA e ajuste (D-18): A/B com ganho de 5 pontos percentuais ou mais nas unidades do N2. Exige 8 GPUs A100 ou H100 de 80 GB, logo só GPU alugada pontual (D-23). O dataset é D0: migrações de código público do demo. O modelo ajustado é servido no vLLM (rota `fix-n2` própria), não no NIM free tier.
+- **Fine-tuning: descartado (18/11/2026).** O NeMo Automodel ajusta o Gemma 4 31B, mas pede 8 GPUs H100 de 80 GB, entre R$ 200 e R$ 600 por rodada alugada, e o modelo ajustado não cabe no side node (cerca de 62 GB em bf16). Custo fora do orçamento do laboratório (D-23). Volta só com patrocínio de GPU ou modelo pequeno que caiba na RTX 3060.
 - **Limites.** Teto diário e disjuntor por rota no LiteLLM (D-21). Sem fallback pago automático: passar a um endpoint pago pede decisão nova.
 - **Ollama** sai do caminho padrão e fica só para desenvolvimento.
 
@@ -45,7 +45,6 @@ Rodar modelo local no notebook (8 GB de VRAM) é pesado, e o `qwen3:4b` (ADR-000
 - **Não verificado em 2026-11-18.** Conferir antes de aceitar:
   - termos do free tier do NIM ("NVIDIA API Trial Terms of Service"), e se ele retém ou treina com os prompts;
   - licença do Gemma 4: a página do NIM cita a NVIDIA Open Model License e também a Apache-2.0, sem dizer qual vale para quê;
-  - receita do NeMo Automodel para texto: a do guia é VLM (recibos com imagem); LoRA não aparece; não há fine-tuning hospedado na página do modelo;
   - suporte a tool calling do Gemma 4 31B no NIM;
   - preço, limites e retenção de prompts do Decision-1.1 na OpenRouter (a página respondeu 404 na consulta);
   - versão publicada e licença do Switchyard;
